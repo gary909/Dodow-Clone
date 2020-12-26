@@ -64,23 +64,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(5);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(6);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(7);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(9);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(13);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(17);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(23);
                 }
             }
@@ -90,23 +84,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(3);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(4);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(6);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(9);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(13);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(17);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(23);
                 }
             }
@@ -121,23 +109,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(6);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(7);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(8);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(10);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(14);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(18);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(24);
                 }
             }
@@ -147,23 +129,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(4);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(5);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(7);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(10);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(14);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(18);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(24);
                 }
             }
@@ -178,23 +154,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(8);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(9);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(10);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(12);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(16);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(20);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(26);
                 }
             }
@@ -204,23 +174,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(6);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(7);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(9);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(12);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(16);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(20);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(26);
                 }
             }
@@ -235,23 +199,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(10);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(11);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(12);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(14);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(18);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(22);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(28);
                 }
             }
@@ -261,23 +219,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(8);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(9);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(11);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(14);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(18);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(22);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(28);
                 }
             }
@@ -292,23 +244,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(12);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(13);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(14);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(16);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(20);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(24);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(30);
                 }
             }
@@ -318,23 +264,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(10);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(11);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(13);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(16);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(20);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(24);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(30);
                 }
             }
@@ -349,23 +289,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(14);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(15);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(16);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(18);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(22);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(26);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(32);
                 }
             }
@@ -375,23 +309,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(12);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(13);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(15);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(18);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(22);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(26);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(32);
                 }
             }
@@ -406,23 +334,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(16);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(17);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(18);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(20);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(24);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(28);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(34);
                 }
             }
@@ -432,23 +354,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(14);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(15);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(17);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(20);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(24);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(28);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(34);
                 }
             }
@@ -457,7 +373,7 @@ void setup() {
             sleep_enable();
             sleep_cpu();
         }
-    // End of 8 min loop
+        // End of 8 min loop
 
     } else {
         //Start of 20 minute loop
@@ -469,23 +385,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(5);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(6);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(7);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(9);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(13);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(17);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(23);
                 }
             }
@@ -495,23 +405,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(3);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(4);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(6);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(9);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(13);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(17);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(23);
                 }
             }
@@ -526,23 +430,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(6);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(7);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(8);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(10);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(14);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(18);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(24);
                 }
             }
@@ -552,23 +450,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(4);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(5);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(7);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(10);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(14);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(18);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(24);
                 }
             }
@@ -583,23 +475,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(8);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(9);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(10);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(12);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(16);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(20);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(26);
                 }
             }
@@ -609,23 +495,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(6);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(7);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(9);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(12);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(16);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(20);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(26);
                 }
             }
@@ -640,23 +520,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(10);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(11);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(12);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(14);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(18);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(22);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(28);
                 }
             }
@@ -666,23 +540,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(8);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(9);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(11);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(14);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(18);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(22);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(28);
                 }
             }
@@ -697,23 +565,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(12);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(13);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(14);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(16);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(20);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(24);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(30);
                 }
             }
@@ -723,23 +585,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(10);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(11);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(13);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(16);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(20);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(24);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(30);
                 }
             }
@@ -754,23 +610,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(14);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(15);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(16);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(18);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(22);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(26);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(32);
                 }
             }
@@ -780,23 +630,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(12);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(13);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(15);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(18);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(22);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(26);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(32);
                 }
             }
@@ -811,23 +655,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(16);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(17);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(18);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(20);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(24);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(28);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(34);
                 }
             }
@@ -837,23 +675,17 @@ void setup() {
                 analogWrite(led3, brightness);
                 if (brightness > 150) {
                     delay(14);
-                }
-                if ((brightness > 125) && (brightness < 151)) {
+                } else if ((brightness > 125) && (brightness < 151)) {
                     delay(15);
-                }
-                if ((brightness > 100) && (brightness < 126)) {
+                } else if ((brightness > 100) && (brightness < 126)) {
                     delay(17);
-                }
-                if ((brightness > 75) && (brightness < 101)) {
+                } else if ((brightness > 75) && (brightness < 101)) {
                     delay(20);
-                }
-                if ((brightness > 50) && (brightness < 76)) {
+                } else if ((brightness > 50) && (brightness < 76)) {
                     delay(24);
-                }
-                if ((brightness > 25) && (brightness < 51)) {
+                } else if ((brightness > 25) && (brightness < 51)) {
                     delay(28);
-                }
-                if ((brightness > 1) && (brightness < 26)) {
+                } else if ((brightness > 1) && (brightness < 26)) {
                     delay(34);
                 }
             }
@@ -862,7 +694,7 @@ void setup() {
             sleep_enable();
             sleep_cpu();
         }
-    // End of 20 min loop
+        // End of 20 min loop
     }
 }
 
