@@ -642,17 +642,18 @@ void setup() {
     }
 }
 
+// A cycle is the lighting and diming of the LED to create that "LED breathing" effect
 void doCycle(int times, int lightCycleDelays[7], int dimCycleDelays[7]) {
     for (int cycle = 0; cycle < times; cycle++) {
         for (brightness = 0; brightness <= 255; brightness += 1) {
             setLEDsBrightness(brightness);
 
-            delayBasedOnBrightness(lightCycleDelays);
+            delayBasedOnBrightness(brightness, lightCycleDelays);
         }
         for (brightness = 255; brightness >= 0; brightness -= 1) {
             setLEDsBrightness(brightness);
 
-            delayBasedOnBrightness(dimCycleDelays);
+            delayBasedOnBrightness(brightness, dimCycleDelays);
         }
         delay(970);
     }
@@ -665,7 +666,8 @@ void setLEDsBrightness(int brightness) {
     analogWrite(led3, brightness);
 }
 
-void delayBasedOnBrightness(int delays[7]) {
+// Depending on the brightness a certain delay will be applied
+void delayBasedOnBrightness(int brightness, int delays[7]) {
     if (brightness > 150) {
         delay(delays[0]);
     } else if ((brightness > 125) && (brightness < 151)) {
