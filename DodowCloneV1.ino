@@ -58,25 +58,25 @@ void setup() {
         //Start of 8 minute loop
 
         // This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
-        doCycle(11, (int[]) {5, 6, 7, 9, 13, 17, 23}, (int[]) {3, 4, 6, 9, 13, 17, 23});
+        doCycle(11, new int[7] {5, 6, 7, 9, 13, 17, 23}, new int[7] {3, 4, 6, 9, 13, 17, 23});
 
         // This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
-        doCycle(10, (int[]) {6, 7, 8, 10, 14, 18, 24}, (int[]) {4, 5, 7, 10, 14, 18, 24});
+        doCycle(10, new int[7] {6, 7, 8, 10, 14, 18, 24}, new int[7] {4, 5, 7, 10, 14, 18, 24});
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        doCycle(9, (int[]) {8, 9, 10, 12, 16, 20, 26}, (int[]) {6, 7, 9, 12, 16, 20, 26});
+        doCycle(9, new int[7] {8, 9, 10, 12, 16, 20, 26}, new int[7] {6, 7, 9, 12, 16, 20, 26});
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        doCycle(8, (int[]) {10, 11, 12, 14, 18, 22, 28}, (int[]) {8, 9, 11, 14, 18, 22, 28});
+        doCycle(8, new int[7] {10, 11, 12, 14, 18, 22, 28}, new int[7] {8, 9, 11, 14, 18, 22, 28});
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        doCycle(7, (int[]) {12, 13, 14, 16, 20, 24, 30}, (int[]) {10, 11, 13, 16, 20, 24, 30});
+        doCycle(7, new int[7] {12, 13, 14, 16, 20, 24, 30}, new int[7] {10, 11, 13, 16, 20, 24, 30});
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        doCycle(6, (int[]) {14, 15, 16, 18, 22, 26, 32}, (int[]) {12, 13, 15, 18, 22, 26, 32});
+        doCycle(6, new int[7] {14, 15, 16, 18, 22, 26, 32}, new int[7] {12, 13, 15, 18, 22, 26, 32});
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        doCycle(12, (int[]) {16, 17, 18, 20, 24, 28, 34}, (int[]) {14, 15, 17, 20, 24, 28, 34});
+        doCycle(12, new int[7] {16, 17, 18, 20, 24, 28, 34}, new int[7] {14, 15, 17, 20, 24, 28, 34});
 
         set_sleep_mode(SLEEP_MODE_PWR_DOWN);
         sleep_enable();
@@ -87,25 +87,25 @@ void setup() {
     } else {
         //Start of 20 minute loop
         //This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
-        doCycle(31, (int[]) {5, 6, 7, 9, 13, 17, 23}, (int[]) {3, 4, 6, 9, 13, 17, 23});
+        doCycle(31, new int[7] {5, 6, 7, 9, 13, 17, 23}, new int[7] {3, 4, 6, 9, 13, 17, 23});
 
         //  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
-        doCycle(30, (int[]) {6, 7, 8, 10, 14, 18, 24}, (int[]) {4, 5, 7, 10, 14, 18, 24});
+        doCycle(30, new int[7] {6, 7, 8, 10, 14, 18, 24}, new int[7] {4, 5, 7, 10, 14, 18, 24});
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        doCycle(27, (int[]) {8, 9, 10, 12, 16, 20, 26}, (int[]) {6, 7, 9, 12, 16, 20, 26});
+        doCycle(27, new int[7] {8, 9, 10, 12, 16, 20, 26}, new int[7] {6, 7, 9, 12, 16, 20, 26});
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        doCycle(22, (int[]) {10, 11, 12, 14, 18, 22, 28}, (int[]) {8, 9, 11, 14, 18, 22, 28});
+        doCycle(22, new int[7] {10, 11, 12, 14, 18, 22, 28}, new int[7] {8, 9, 11, 14, 18, 22, 28});
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        doCycle(20, (int[]) {12, 13, 14, 16, 20, 24, 30}, (int[]) {10, 11, 13, 16, 20, 24, 30});
+        doCycle(20, new int[7] {12, 13, 14, 16, 20, 24, 30}, new int[7] {10, 11, 13, 16, 20, 24, 30});
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        doCycle(12, (int[]) {14, 15, 16, 18, 22, 26, 32}, (int[]) {12, 13, 15, 18, 22, 26, 32});
+        doCycle(12, new int[7] {14, 15, 16, 18, 22, 26, 32}, new int[7] {12, 13, 15, 18, 22, 26, 32});
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        doCycle(18, (int[]) {16, 17, 18, 20, 24, 28, 34}, (int[]) {14, 15, 17, 20, 24, 28, 34});
+        doCycle(18, new int[7] {16, 17, 18, 20, 24, 28, 34}, new int[7] {14, 15, 17, 20, 24, 28, 34});
 
         set_sleep_mode(SLEEP_MODE_PWR_DOWN);
         sleep_enable();
