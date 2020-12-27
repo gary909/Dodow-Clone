@@ -56,588 +56,61 @@ void setup() {
     if (selected8MinLoop(sensorVal)) {
 
         //Start of 8 minute loop
-        //This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
-        for (int cycles = 0; cycles < 11; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(5);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(6);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(7);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(9);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(13);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(17);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(23);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(3);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(4);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(6);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(9);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(13);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(17);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(23);
-                }
-            }
-            delay(970);
-        }
 
-        //  This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
-        for (int cycles = 0; cycles < 10; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(6);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(7);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(8);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(10);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(14);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(18);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(24);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(4);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(5);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(7);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(10);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(14);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(18);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(24);
-                }
-            }
-            delay(970);
-        }
+        // This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
+        doCycle(11, (int[]) {5, 6, 7, 9, 13, 17, 23}, (int[]) {3, 4, 6, 9, 13, 17, 23});
+
+        // This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
+        doCycle(10, (int[]) {6, 7, 8, 10, 14, 18, 24}, (int[]) {4, 5, 7, 10, 14, 18, 24});
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        for (int cycles = 0; cycles < 9; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(8);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(9);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(10);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(12);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(16);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(20);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(26);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(6);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(7);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(9);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(12);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(16);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(20);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(26);
-                }
-            }
-            delay(970);
-        }
+        doCycle(9, (int[]) {8, 9, 10, 12, 16, 20, 26}, (int[]) {6, 7, 9, 12, 16, 20, 26});
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        for (int cycles = 0; cycles < 8; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(10);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(11);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(12);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(14);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(18);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(22);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(28);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(8);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(9);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(11);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(14);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(18);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(22);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(28);
-                }
-            }
-            delay(970);
-        }
+        doCycle(8, (int[]) {10, 11, 12, 14, 18, 22, 28}, (int[]) {8, 9, 11, 14, 18, 22, 28});
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        for (int cycles = 0; cycles < 7; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(12);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(13);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(14);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(16);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(20);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(24);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(30);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(10);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(11);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(13);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(16);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(20);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(24);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(30);
-                }
-            }
-            delay(970);
-        }
+        doCycle(7, (int[]) {12, 13, 14, 16, 20, 24, 30}, (int[]) {10, 11, 13, 16, 20, 24, 30});
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        for (int cycles = 0; cycles < 6; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(14);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(15);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(16);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(18);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(22);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(26);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(32);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(12);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(13);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(15);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(18);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(22);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(26);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(32);
-                }
-            }
-            delay(970);
-        }
+        doCycle(6, (int[]) {14, 15, 16, 18, 22, 26, 32}, (int[]) {12, 13, 15, 18, 22, 26, 32});
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        for (int cycles = 0; cycles < 12; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(16);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(17);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(18);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(20);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(24);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(28);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(34);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(14);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(15);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(17);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(20);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(24);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(28);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(34);
-                }
-            }
-            delay(970);
-            set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-            sleep_enable();
-            sleep_cpu();
-        }
+        doCycle(12, (int[]) {16, 17, 18, 20, 24, 28, 34}, (int[]) {14, 15, 17, 20, 24, 28, 34});
+
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sleep_cpu();
+
         // End of 8 min loop
 
     } else {
         //Start of 20 minute loop
         //This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
-        for (int cycles = 0; cycles < 31; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(5);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(6);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(7);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(9);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(13);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(17);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(23);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(3);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(4);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(6);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(9);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(13);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(17);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(23);
-                }
-            }
-            delay(970);
-        }
+        doCycle(31, (int[]) {5, 6, 7, 9, 13, 17, 23}, (int[]) {3, 4, 6, 9, 13, 17, 23});
 
         //  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
-        for (int cycles = 0; cycles < 30; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(6);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(7);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(8);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(10);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(14);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(18);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(24);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(4);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(5);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(7);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(10);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(14);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(18);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(24);
-                }
-            }
-            delay(970);
-        }
+        doCycle(30, (int[]) {6, 7, 8, 10, 14, 18, 24}, (int[]) {4, 5, 7, 10, 14, 18, 24});
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        for (int cycles = 0; cycles < 27; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(8);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(9);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(10);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(12);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(16);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(20);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(26);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(6);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(7);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(9);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(12);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(16);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(20);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(26);
-                }
-            }
-            delay(970);
-        }
+        doCycle(27, (int[]) {8, 9, 10, 12, 16, 20, 26}, (int[]) {6, 7, 9, 12, 16, 20, 26});
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        for (int cycles = 0; cycles < 22; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(10);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(11);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(12);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(14);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(18);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(22);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(28);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(8);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(9);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(11);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(14);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(18);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(22);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(28);
-                }
-            }
-            delay(970);
-        }
+        doCycle(22, (int[]) {10, 11, 12, 14, 18, 22, 28}, (int[]) {8, 9, 11, 14, 18, 22, 28});
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        for (int cycles = 0; cycles < 20; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(12);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(13);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(14);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(16);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(20);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(24);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(30);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(10);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(11);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(13);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(16);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(20);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(24);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(30);
-                }
-            }
-            delay(970);
-        }
+        doCycle(20, (int[]) {12, 13, 14, 16, 20, 24, 30}, (int[]) {10, 11, 13, 16, 20, 24, 30});
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        for (int cycles = 0; cycles < 12; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(14);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(15);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(16);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(18);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(22);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(26);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(32);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(12);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(13);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(15);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(18);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(22);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(26);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(32);
-                }
-            }
-            delay(970);
-        }
+        doCycle(12, (int[]) {14, 15, 16, 18, 22, 26, 32}, (int[]) {12, 13, 15, 18, 22, 26, 32});
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        for (int cycles = 0; cycles < 18; cycles++) {
-            for (brightness = 0; brightness <= 255; brightness += 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(16);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(17);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(18);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(20);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(24);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(28);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(34);
-                }
-            }
-            for (brightness = 255; brightness >= 0; brightness -= 1) {
-               setLEDsBrightness(brightness);
-                if (brightness > 150) {
-                    delay(14);
-                } else if ((brightness > 125) && (brightness < 151)) {
-                    delay(15);
-                } else if ((brightness > 100) && (brightness < 126)) {
-                    delay(17);
-                } else if ((brightness > 75) && (brightness < 101)) {
-                    delay(20);
-                } else if ((brightness > 50) && (brightness < 76)) {
-                    delay(24);
-                } else if ((brightness > 25) && (brightness < 51)) {
-                    delay(28);
-                } else if ((brightness > 1) && (brightness < 26)) {
-                    delay(34);
-                }
-            }
-            delay(970);
-            set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-            sleep_enable();
-            sleep_cpu();
-        }
+        doCycle(18, (int[]) {16, 17, 18, 20, 24, 28, 34}, (int[]) {14, 15, 17, 20, 24, 28, 34});
+
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sleep_cpu();
+
         // End of 20 min loop
     }
 }
