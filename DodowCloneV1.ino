@@ -53,7 +53,7 @@ void setup() {
     int sensorVal = digitalRead(2);
 
     //If the switch is set to High, run this portion of code
-    if (sensorVal == HIGH) {
+    if (selected8MinLoop(sensorVal)) {
 
         //Start of 8 minute loop
         //This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
@@ -641,6 +641,9 @@ void setup() {
         // End of 20 min loop
     }
 }
+
+// Helper function to easily identify the conditional case with which we are dealing with
+bool selected8MinLoop(int sensorVal) { return sensorVal == HIGH; }
 
 // A cycle is the lighting and diming of the LED to create that "LED breathing" effect
 void doCycle(int times, int lightCycleDelays[7], int dimCycleDelays[7]) {
