@@ -57,7 +57,7 @@ void setup() {
 
         //Start of 8 minute loop
         //This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
-        for (int timeReapeter = 0; timeReapeter < 11; timeReapeter++) {
+        for (int cycles = 0; cycles < 11; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -98,7 +98,7 @@ void setup() {
         }
 
         //  This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
-        for (int timeReapeter = 0; timeReapeter < 10; timeReapeter++) {
+        for (int cycles = 0; cycles < 10; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -139,7 +139,7 @@ void setup() {
         }
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        for (int timeReapeter = 0; timeReapeter < 9; timeReapeter++) {
+        for (int cycles = 0; cycles < 9; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -180,7 +180,7 @@ void setup() {
         }
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        for (int timeReapeter = 0; timeReapeter < 8; timeReapeter++) {
+        for (int cycles = 0; cycles < 8; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -221,7 +221,7 @@ void setup() {
         }
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        for (int timeReapeter = 0; timeReapeter < 7; timeReapeter++) {
+        for (int cycles = 0; cycles < 7; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -262,7 +262,7 @@ void setup() {
         }
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        for (int timeReapeter = 0; timeReapeter < 6; timeReapeter++) {
+        for (int cycles = 0; cycles < 6; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -303,7 +303,7 @@ void setup() {
         }
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++) {
+        for (int cycles = 0; cycles < 12; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -350,7 +350,7 @@ void setup() {
     } else {
         //Start of 20 minute loop
         //This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
-        for (int timeReapeter = 0; timeReapeter < 31; timeReapeter++) {
+        for (int cycles = 0; cycles < 31; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -391,7 +391,7 @@ void setup() {
         }
 
         //  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
-        for (int timeReapeter = 0; timeReapeter < 30; timeReapeter++) {
+        for (int cycles = 0; cycles < 30; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -432,7 +432,7 @@ void setup() {
         }
 
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
-        for (int timeReapeter = 0; timeReapeter < 27; timeReapeter++) {
+        for (int cycles = 0; cycles < 27; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -473,7 +473,7 @@ void setup() {
         }
 
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
-        for (int timeReapeter = 0; timeReapeter < 22; timeReapeter++) {
+        for (int cycles = 0; cycles < 22; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -514,7 +514,7 @@ void setup() {
         }
 
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-        for (int timeReapeter = 0; timeReapeter < 20; timeReapeter++) {
+        for (int cycles = 0; cycles < 20; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -555,7 +555,7 @@ void setup() {
         }
 
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-        for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++) {
+        for (int cycles = 0; cycles < 12; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
@@ -596,7 +596,7 @@ void setup() {
         }
 
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-        for (int timeReapeter = 0; timeReapeter < 18; timeReapeter++) {
+        for (int cycles = 0; cycles < 18; cycles++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
                setLEDsBrightness(brightness);
                 if (brightness > 150) {
