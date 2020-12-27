@@ -649,6 +649,24 @@ void setLEDsBrightness(int brightness) {
     analogWrite(led3, brightness);
 }
 
+void delayBasedOnBrightness(int delays[7]) {
+    if (brightness > 150) {
+        delay(delays[0]);
+    } else if ((brightness > 125) && (brightness < 151)) {
+        delay(delays[1]);
+    } else if ((brightness > 100) && (brightness < 126)) {
+        delay(delays[2]);
+    } else if ((brightness > 75) && (brightness < 101)) {
+        delay(delays[3]);
+    } else if ((brightness > 50) && (brightness < 76)) {
+        delay(delays[4]);
+    } else if ((brightness > 25) && (brightness < 51)) {
+        delay(delays[5]);
+    } else if ((brightness > 1) && (brightness < 26)) {
+        delay(delays[6]);
+    }
+}
+
 void loop() {
     // this code will never be reached (the logic happens all in the setup function)
 }
