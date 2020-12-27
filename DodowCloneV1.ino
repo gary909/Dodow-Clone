@@ -36,7 +36,7 @@ Min 20 = 6
 
 #include <avr/sleep.h>
 
-int led = 9;           // LED is attached to pwm pin 9
+int led1 = 9;          // LED is attached to pwm pin 9
 int led2 = 10;         // LED is attached to pwm pin 10
 int led3 = 11;         // LED is attached to pwm pin 11
 int brightness = 0;    // Set the starting brightness
@@ -44,7 +44,7 @@ int brightness = 0;    // Set the starting brightness
 // the setup routine runs once powered on or when you press reset:
 void setup() {
     // declare pin 9, 10, 11 to be an output:
-    pinMode(led, OUTPUT);
+    pinMode(led1, OUTPUT);
     pinMode(led2, OUTPUT);
     pinMode(led3, OUTPUT);
     // configure pin2 as an input switch
@@ -59,9 +59,7 @@ void setup() {
         //This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
         for (int timeReapeter = 0; timeReapeter < 11; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(5);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -79,9 +77,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(3);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -104,9 +100,7 @@ void setup() {
         //  This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
         for (int timeReapeter = 0; timeReapeter < 10; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(6);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -124,9 +118,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(4);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -149,9 +141,7 @@ void setup() {
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
         for (int timeReapeter = 0; timeReapeter < 9; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(8);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -169,9 +159,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(6);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -194,9 +182,7 @@ void setup() {
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
         for (int timeReapeter = 0; timeReapeter < 8; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(10);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -214,9 +200,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(8);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -239,9 +223,7 @@ void setup() {
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
         for (int timeReapeter = 0; timeReapeter < 7; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(12);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -259,9 +241,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(10);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -284,9 +264,7 @@ void setup() {
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
         for (int timeReapeter = 0; timeReapeter < 6; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(14);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -304,9 +282,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(12);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -329,9 +305,7 @@ void setup() {
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
         for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(16);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -349,9 +323,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(14);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -380,9 +352,7 @@ void setup() {
         //This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
         for (int timeReapeter = 0; timeReapeter < 31; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(5);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -400,9 +370,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(3);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -425,9 +393,7 @@ void setup() {
         //  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
         for (int timeReapeter = 0; timeReapeter < 30; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(6);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -445,9 +411,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(4);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -470,9 +434,7 @@ void setup() {
         // Start of 7 sec code / 8.57 times per min (0.11 each breath)
         for (int timeReapeter = 0; timeReapeter < 27; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(8);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -490,9 +452,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(6);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -515,9 +475,7 @@ void setup() {
         // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
         for (int timeReapeter = 0; timeReapeter < 22; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(10);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -535,9 +493,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(8);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -560,9 +516,7 @@ void setup() {
         // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
         for (int timeReapeter = 0; timeReapeter < 20; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(12);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -580,9 +534,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(10);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -605,9 +557,7 @@ void setup() {
         //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
         for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(14);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -625,9 +575,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(12);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -650,9 +598,7 @@ void setup() {
         // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
         for (int timeReapeter = 0; timeReapeter < 18; timeReapeter++) {
             for (brightness = 0; brightness <= 255; brightness += 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(16);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -670,9 +616,7 @@ void setup() {
                 }
             }
             for (brightness = 255; brightness >= 0; brightness -= 1) {
-                analogWrite(led, brightness);
-                analogWrite(led2, brightness);
-                analogWrite(led3, brightness);
+               setLEDsBrightness(brightness);
                 if (brightness > 150) {
                     delay(14);
                 } else if ((brightness > 125) && (brightness < 151)) {
@@ -698,6 +642,13 @@ void setup() {
     }
 }
 
+// Writes to the defined pins the passed brightness value
+void setLEDsBrightness(int brightness) {
+    analogWrite(led1, brightness);
+    analogWrite(led2, brightness);
+    analogWrite(led3, brightness);
+}
+
 void loop() {
-    // put your main code here, to run repeatedly:
+    // this code will never be reached (the logic happens all in the setup function)
 }
