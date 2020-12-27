@@ -36,7 +36,7 @@ Min 20 = 6
 
 #include <avr/sleep.h>
 
-int led = 9;           // LED is attached to pwm pin 9
+int led1 = 9;          // LED is attached to pwm pin 9
 int led2 = 10;         // LED is attached to pwm pin 10
 int led3 = 11;         // LED is attached to pwm pin 11
 int brightness = 0;    // Set the starting brightness
@@ -44,7 +44,7 @@ int brightness = 0;    // Set the starting brightness
 // the setup routine runs once powered on or when you press reset:
 void setup() {
     // declare pin 9, 10, 11 to be an output:
-    pinMode(led, OUTPUT);
+    pinMode(led1, OUTPUT);
     pinMode(led2, OUTPUT);
     pinMode(led3, OUTPUT);
     // configure pin2 as an input switch
@@ -53,871 +53,114 @@ void setup() {
     int sensorVal = digitalRead(2);
 
     //If the switch is set to High, run this portion of code
-    if (sensorVal == HIGH)
-    {
+    if (selected8MinLoop(sensorVal)) {
 
-//Start of 8 minute loop    
-//This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
-    for (int timeReapeter = 0; timeReapeter < 11; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(5);
+        //Start of 8 minute loop
+
+        // This code below lasts 5.5 seconds per flash for 1 min / 10.9 times per min (0.091 each breath)
+        doCycle(11, new int[7] {5, 6, 7, 9, 13, 17, 23}, new int[7] {3, 4, 6, 9, 13, 17, 23});
+
+        // This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
+        doCycle(10, new int[7] {6, 7, 8, 10, 14, 18, 24}, new int[7] {4, 5, 7, 10, 14, 18, 24});
+
+        // Start of 7 sec code / 8.57 times per min (0.11 each breath)
+        doCycle(9, new int[7] {8, 9, 10, 12, 16, 20, 26}, new int[7] {6, 7, 9, 12, 16, 20, 26});
+
+        // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
+        doCycle(8, new int[7] {10, 11, 12, 14, 18, 22, 28}, new int[7] {8, 9, 11, 14, 18, 22, 28});
+
+        // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
+        doCycle(7, new int[7] {12, 13, 14, 16, 20, 24, 30}, new int[7] {10, 11, 13, 16, 20, 24, 30});
+
+        //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
+        doCycle(6, new int[7] {14, 15, 16, 18, 22, 26, 32}, new int[7] {12, 13, 15, 18, 22, 26, 32});
+
+        // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
+        doCycle(12, new int[7] {16, 17, 18, 20, 24, 28, 34}, new int[7] {14, 15, 17, 20, 24, 28, 34});
+
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sleep_cpu();
+
+        // End of 8 min loop
+
+    } else {
+        //Start of 20 minute loop
+        //This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
+        doCycle(31, new int[7] {5, 6, 7, 9, 13, 17, 23}, new int[7] {3, 4, 6, 9, 13, 17, 23});
+
+        //  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
+        doCycle(30, new int[7] {6, 7, 8, 10, 14, 18, 24}, new int[7] {4, 5, 7, 10, 14, 18, 24});
+
+        // Start of 7 sec code / 8.57 times per min (0.11 each breath)
+        doCycle(27, new int[7] {8, 9, 10, 12, 16, 20, 26}, new int[7] {6, 7, 9, 12, 16, 20, 26});
+
+        // Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
+        doCycle(22, new int[7] {10, 11, 12, 14, 18, 22, 28}, new int[7] {8, 9, 11, 14, 18, 22, 28});
+
+        // Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
+        doCycle(20, new int[7] {12, 13, 14, 16, 20, 24, 30}, new int[7] {10, 11, 13, 16, 20, 24, 30});
+
+        //Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
+        doCycle(12, new int[7] {14, 15, 16, 18, 22, 26, 32}, new int[7] {12, 13, 15, 18, 22, 26, 32});
+
+        // Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
+        doCycle(18, new int[7] {16, 17, 18, 20, 24, 28, 34}, new int[7] {14, 15, 17, 20, 24, 28, 34});
+
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sleep_cpu();
+
+        // End of 20 min loop
     }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(6);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(7);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(9);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(13);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(17);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(23);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(3);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(4);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(6);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(9);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(13);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(17);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(23);
-    }
-  }
-  delay(970);
 }
 
-//  This code below lasts for 6 seconds & 1 min / 10 times per min (0.10 each breath)
-for (int timeReapeter = 0; timeReapeter < 10; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(6);
+// Helper function to easily identify the conditional case with which we are dealing with
+bool selected8MinLoop(int sensorVal) { return sensorVal == HIGH; }
+
+// A cycle is the lighting and diming of the LED to create that "LED breathing" effect
+void doCycle(int times, int lightCycleDelays[7], int dimCycleDelays[7]) {
+    for (int cycle = 0; cycle < times; cycle++) {
+        for (brightness = 0; brightness <= 255; brightness += 1) {
+            setLEDsBrightness(brightness);
+
+            delayBasedOnBrightness(brightness, lightCycleDelays);
+        }
+        for (brightness = 255; brightness >= 0; brightness -= 1) {
+            setLEDsBrightness(brightness);
+
+            delayBasedOnBrightness(brightness, dimCycleDelays);
+        }
+        delay(970);
     }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(7);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(8);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(10);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(14);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(18);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(24);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(4);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(5);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(7);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(10);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(14);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(18);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(24);
-    }
-  }
-  delay(970);
 }
 
-// Start of 7 sec code / 8.57 times per min (0.11 each breath)
-for (int timeReapeter = 0; timeReapeter < 9; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
+// Writes to the defined pins the passed brightness value
+void setLEDsBrightness(int brightness) {
+    analogWrite(led1, brightness);
     analogWrite(led2, brightness);
     analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(8);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(9);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(10);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(12);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(16);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(20);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(26);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(6);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(7);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(9);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(12);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(16);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(20);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(26);
-    }
-  }
-  delay(970);
 }
 
-// Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
- for (int timeReapeter = 0; timeReapeter < 8; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
+// Depending on the brightness a certain delay will be applied
+void delayBasedOnBrightness(int brightness, int delays[7]) {
     if (brightness > 150) {
-      delay(10);
+        delay(delays[0]);
+    } else if ((brightness > 125) && (brightness < 151)) {
+        delay(delays[1]);
+    } else if ((brightness > 100) && (brightness < 126)) {
+        delay(delays[2]);
+    } else if ((brightness > 75) && (brightness < 101)) {
+        delay(delays[3]);
+    } else if ((brightness > 50) && (brightness < 76)) {
+        delay(delays[4]);
+    } else if ((brightness > 25) && (brightness < 51)) {
+        delay(delays[5]);
+    } else if ((brightness > 1) && (brightness < 26)) {
+        delay(delays[6]);
     }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(11);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(12);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(14);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(18);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(22);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(28);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(8);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(9);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(11);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(14);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(18);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(22);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(28);
-    }
-  }
-  delay(970);
-}
-
-// Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-for (int timeReapeter = 0; timeReapeter < 7; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(12);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(13);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(14);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(16);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(20);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(24);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(30);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(10);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(11);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(13);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(16);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(20);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(24);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(30);
-    }
-  }
-  delay(970);
-}
-
-//Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-for (int timeReapeter = 0; timeReapeter < 6; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(14);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(15);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(16);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(18);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(22);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(26);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(32);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(12);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(13);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(15);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(18);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(22);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(26);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(32);
-    }
-  }
-  delay(970);
-}
-
-// Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(16);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(17);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(18);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(20);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(24);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(28);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(34);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(14);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(15);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(17);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(20);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(24);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(28);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(34);
-    }
-  }
-  delay(970); 
-  set_sleep_mode (SLEEP_MODE_PWR_DOWN); 
-  sleep_enable();
-  sleep_cpu ();  
-}
-// End of 8 min loop
-
-}
-
-
-
-
-
-
-
-
-  else {
-    //Start of 20 minute loop    
-//This code below lasts for 5.5 seconds & 1 min / 10.9 times per min (0.091 each breath)
-    for (int timeReapeter = 0; timeReapeter < 31; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(5);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(6);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(7);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(9);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(13);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(17);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(23);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(3);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(4);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(6);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(9);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(13);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(17);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(23);
-    }
-  }
-  delay(970);
-}
-
-//  This code below lasts for 6 seconds & 3 min / 10 times per min (0.10 each breath)
-for (int timeReapeter = 0; timeReapeter < 30; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(6);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(7);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(8);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(10);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(14);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(18);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(24);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(4);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(5);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(7);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(10);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(14);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(18);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(24);
-    }
-  }
-  delay(970);
-}
-
-// Start of 7 sec code / 8.57 times per min (0.11 each breath)
-for (int timeReapeter = 0; timeReapeter < 27; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(8);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(9);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(10);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(12);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(16);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(20);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(26);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(6);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(7);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(9);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(12);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(16);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(20);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(26);
-    }
-  }
-  delay(970);
-}
-
-// Start of 8 sec code / 1 min loop / 7.5 times per min (0.13 each breath)
- for (int timeReapeter = 0; timeReapeter < 22; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(10);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(11);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(12);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(14);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(18);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(22);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(28);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(8);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(9);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(11);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(14);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(18);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(22);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(28);
-    }
-  }
-  delay(970);
-}
-
-// Start of 9 second code 1 min loop / 6.66 times per min (0.15 each breath)
-for (int timeReapeter = 0; timeReapeter < 20; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(12);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(13);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(14);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(16);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(20);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(24);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(30);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(10);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(11);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(13);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(16);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(20);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(24);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(30);
-    }
-  }
-  delay(970);
-}
-
-//Start of 10 sec code / 1 min loop / 6 times per min (0.16 each breath)
-for (int timeReapeter = 0; timeReapeter < 12; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(14);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(15);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(16);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(18);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(22);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(26);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(32);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(12);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(13);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(15);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(18);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(22);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(26);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(32);
-    }
-  }
-  delay(970);
-}
-
-// Start of 11 sec code / 1 min loop / 5.45 times per min (0.18 each breath)
-for (int timeReapeter = 0; timeReapeter < 18; timeReapeter++)  
-    {
-  for(brightness = 0 ; brightness <= 255; brightness+=1)
-  { 
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(16);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(17);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(18);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(20);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(24);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(28);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(34);
-    }
-  }
-  for(brightness = 255; brightness >=0; brightness-=1)
-  {
-    analogWrite(led, brightness);
-    analogWrite(led2, brightness);
-    analogWrite(led3, brightness);
-    if (brightness > 150) {
-      delay(14);
-    }
-    if ((brightness > 125) && (brightness < 151)) {
-      delay(15);
-    }
-    if (( brightness > 100) && (brightness < 126)) {
-      delay(17);
-    }
-    if (( brightness > 75) && (brightness < 101)) {
-      delay(20);
-    }
-    if (( brightness > 50) && (brightness < 76)) {
-      delay(24);
-    }
-    if (( brightness > 25) && (brightness < 51)) {
-      delay(28);
-    }
-    if (( brightness > 1) && (brightness < 26)) {
-      delay(34);
-    }
-  }
-  delay(970);
-  set_sleep_mode (SLEEP_MODE_PWR_DOWN); 
-  sleep_enable();
-  sleep_cpu (); 
-}
-// End of 20 min loop
-}
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+    // this code will never be reached (the logic happens all in the setup function)
 }
