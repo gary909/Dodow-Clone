@@ -642,6 +642,22 @@ void setup() {
     }
 }
 
+void doCycle(int times, int lightCycleDelays[7], int dimCycleDelays[7]) {
+    for (int cycle = 0; cycle < times; cycle++) {
+        for (brightness = 0; brightness <= 255; brightness += 1) {
+            setLEDsBrightness(brightness);
+
+            delayBasedOnBrightness(lightCycleDelays);
+        }
+        for (brightness = 255; brightness >= 0; brightness -= 1) {
+            setLEDsBrightness(brightness);
+
+            delayBasedOnBrightness(dimCycleDelays);
+        }
+        delay(970);
+    }
+}
+
 // Writes to the defined pins the passed brightness value
 void setLEDsBrightness(int brightness) {
     analogWrite(led1, brightness);
